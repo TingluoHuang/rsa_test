@@ -2,13 +2,16 @@
 using System.Security.Cryptography;
 using System.Text.Json;
 
+Console.WriteLine("Creating new ECDsa key");
+using ECDsa ecdsa = ECDsa.Create(ECCurve.NamedCurves.nistP256);
+ECParameters p = ecdsa.ExportParameters(true);
+Console.WriteLine($"ECDSA private key length: {p.D.Length}"); // Expecting 32
+
 Console.WriteLine("Creating new RSA key using 2048-bit key length");
 
 var rsa = RSA.Create(2048);
 var rsaParameter = new RSAParametersSerializable(rsa.ExportParameters(true));
-string jsonString = JsonSerializer.Serialize(rsaParameter);
-
-Console.WriteLine(jsonString);
+Console.WriteLine($"RSA private key length: {rsaParameter.D.Length}");
 
 [Serializable]
 internal class RSAParametersSerializable : ISerializable
