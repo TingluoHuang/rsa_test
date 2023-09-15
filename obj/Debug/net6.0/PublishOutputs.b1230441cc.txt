@@ -1,5 +1,0 @@
-/workspaces/rsa_test/bin/Debug/net6.0/publish/rsa_test
-/workspaces/rsa_test/bin/Debug/net6.0/publish/rsa_test.dll
-/workspaces/rsa_test/bin/Debug/net6.0/publish/rsa_test.deps.json
-/workspaces/rsa_test/bin/Debug/net6.0/publish/rsa_test.runtimeconfig.json
-/workspaces/rsa_test/bin/Debug/net6.0/publish/rsa_test.pdb
