@@ -19,6 +19,7 @@ unsafe {
     using Process currentProcess = Process.GetCurrentProcess();
 
     foreach (ProcessModule module in currentProcess.Modules) {
+        Console.WriteLine(module.FileName);
         string fileName = Path.GetFileName(module.FileName);
 
         if (fileName.Equals("libSystem.Security.Cryptography.Native.OpenSsl.so", StringComparison.Ordinal)) {
